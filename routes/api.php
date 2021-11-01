@@ -25,5 +25,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
  *     @OA\Response(response="default", description="Welcome page")
  * )
  */
-Route::get('/list', 'ApiAdminController@index')->name('api_admin');
+Route::get('/categories', 'ApiAdminController@Categories')->name('api_admin');
+
+Route::get('/products', 'ApiAdminController@Products')->name('api_admin');
+
+Route::get('/brands', 'ApiAdminController@Brands')->name('api_admin');
+
+Route::get('/coupons', 'ApiAdminController@Coupons_list')->name('api_admin');
+
+
 

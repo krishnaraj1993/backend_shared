@@ -2,20 +2,29 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Coupon;
+use App\Models\Product;
 use Symfony\Component\HttpFoundation\Response;
-use Illuminate\Support\Facades\Storage;
 
 class ApiAdminController extends Controller
 {
-    
-    public function index()
+
+    public function Categories()
     {
-        $path = Storage::path('avatar.png');
-        
-        $storagePath = storage_path('avatar.png');
-        //$parent_cats=Category::where('is_parent',1)->orderBy('title','ASC')->get();
-        return response()->json(['name' => 'Abigail', 'state' => $storagePath]);
+        $parent_cats = Category::where('is_parent', 1)->orderBy('title', 'ASC')->get();
+        return response()->json(['status' => '1', 'data' => $parent_cats]);
+    }
+
+    public function Products()
+    {
+        $products = Product::getAllProduct();
+        return response()->json(['status' => '1', 'data' => $products]);
+    }
+
+    public function Coupons_list()
+    {
+        $coupons=Coupon::orderBy('id','DESC')->paginate('10');
+        return response()->json(['status' => '1', 'data' => $coupons]);
     }
 }
