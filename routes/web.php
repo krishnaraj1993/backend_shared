@@ -181,6 +181,14 @@ Route::group(['prefix'=>'/user','middleware'=>['user']],function(){
 
 });
 
+Route::any('customer/login', 'CustomerController@login')->name('customer.login.form');
+Route::get('customer/categort', 'CustomerController@category')->name('blog.category');
+Route::get('customer/product', 'CustomerController@product');
+Route::any('customer/slider', 'CustomerController@product');
+Route::post('customer/register','CustomerController@register');
+
+
+
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
