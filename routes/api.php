@@ -36,11 +36,11 @@ Route::get('/coupons', 'ApiAdminController@Coupons_list')->name('api_admin');
 
 Route::any('/login', 'CustomerController@login')->name('customer.login.form');
 
-Route::get('/categort', 'CustomerController@category')->name('blog.category');
+Route::get('/category', 'CustomerController@category')->name('blog.category');
 
 Route::get('/product', 'CustomerController@product');
 
-Route::any('/slider', 'CustomerController@product');
+Route::any('/slider', 'CustomerController@slider');
 
 Route::post('/register','CustomerController@register');
 

@@ -8,13 +8,78 @@
         "/category": {
             "get": {
                 "tags": [
-                    "auth"
+                    ""
                 ],
-                "summary": "Sign in",
-                "description": "Login by email, password",
-                "operationId": "authLogin",
+                "summary": "list categories",
+                "description": "list categories",
+                "operationId": "categories",
                 "requestBody": {
-                    "description": "Pass user credentials"
+                    "description": "no request data",
+                    "required": false
+                },
+                "responses": {
+                    "422": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, wrong email address or password. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/product": {
+            "get": {
+                "tags": [
+                    ""
+                ],
+                "summary": "list product",
+                "description": "list product",
+                "operationId": "product",
+                "requestBody": {
+                    "description": "no request data",
+                    "required": false
+                },
+                "responses": {
+                    "422": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, wrong email address or password. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/slider": {
+            "get": {
+                "tags": [
+                    ""
+                ],
+                "summary": "list slider",
+                "description": "list slider",
+                "operationId": "slider",
+                "requestBody": {
+                    "description": "no request data",
+                    "required": false
                 },
                 "responses": {
                     "422": {
