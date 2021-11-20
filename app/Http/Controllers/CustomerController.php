@@ -22,7 +22,7 @@ class CustomerController extends Controller
 
     /**
      * @OA\Get(
-     * path="/category",
+     * path="/api/category",
      * summary="list categories",
      * description="list categories",
      * operationId="categories",
@@ -54,7 +54,7 @@ class CustomerController extends Controller
 
     /**
      * @OA\Get(
-     * path="/product",
+     * path="/api/product",
      * summary="list product",
      * description="list product",
      * operationId="product",
@@ -86,7 +86,7 @@ class CustomerController extends Controller
 
     /**
      * @OA\Get(
-     * path="/slider",
+     * path="/api/slider",
      * summary="list slider",
      * description="list slider",
      * operationId="slider",
